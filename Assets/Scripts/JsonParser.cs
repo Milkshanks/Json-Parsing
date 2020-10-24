@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 
 public class JsonParser : MonoBehaviour
 {
-
     [SerializeField]
     private TableView _table = null;
     

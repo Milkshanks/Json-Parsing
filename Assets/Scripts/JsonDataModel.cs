@@ -4,5 +4,5 @@ public class JsonDataModel
 {
     public string Title;
     public string[] ColumnHeaders;
-    public Dictionary<string, string>[] Data;
+    public List<Dictionary<string, string>> Data;
 }
