@@ -23,18 +23,39 @@ public class TableView : MonoBehaviour
         _titleField.text = _title;
         _columnKeys = jsonData.ColumnHeaders;
         _rowDataMap = jsonData.Data;
+
+        int lastColumnIndex = _columnViewList.Count - 1;
         
         for (int i = 0; i < _columnKeys.Length; i++)
         {
             string key = _columnKeys[i];
+            
+            ColumnView column;
+            
+            if (lastColumnIndex < i)
+            {
+                column = Instantiate(_columnTemplate, _columnTemplate.transform.parent);
+                _columnViewList.Add(column);
+            }
+            else
+            {
+                column = _columnViewList[i];
+            }
 
-            ColumnView column = Instantiate(_columnTemplate, _columnTemplate.transform.parent);
-            column.SetHeader(key);
+            column.Initialize(key);
+            
             for (int j = 0; j < _rowDataMap.Count; j++)
             {
-                column.SetItem(_rowDataMap[j][key]);
-                column.gameObject.SetActive(true);
+                column.SetItemData(_rowDataMap[j][key]);
             }
+            
+            column.SetColumn();
+            column.gameObject.SetActive(true);
+        }
+
+        for (int i = _columnKeys.Length; i < _columnViewList.Count; i++)
+        {
+            _columnViewList[i].gameObject.SetActive(false);
         }
     }
 }
