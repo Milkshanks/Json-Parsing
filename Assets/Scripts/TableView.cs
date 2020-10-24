@@ -19,8 +19,7 @@ public class TableView : MonoBehaviour
     
     public void SetData(JsonDataModel jsonData)
     {
-        _title = jsonData.Title;
-        _titleField.text = _title;
+        _titleField.text = jsonData.Title;
         _columnKeys = jsonData.ColumnHeaders;
         _rowDataMap = jsonData.Data;
 
