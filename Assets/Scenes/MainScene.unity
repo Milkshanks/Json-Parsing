@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 93991414}
   - component: {fileID: 93991413}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Parser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
     m_Left: 50
     m_Right: 50
     m_Top: 50
-    m_Bottom: 0
+    m_Bottom: 10
   m_ChildAlignment: 1
   m_Spacing: 80
   m_ChildForceExpandWidth: 1

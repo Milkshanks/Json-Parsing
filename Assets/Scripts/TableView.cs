@@ -10,11 +10,8 @@ public class TableView : MonoBehaviour
     [SerializeField]
     private ColumnView _columnTemplate = null;
     
-    private JsonDataModel _jsonData;
-    private string _title;
     private string[] _columnKeys;
     private List<Dictionary<string, string>> _rowDataMap;
-    
     private List<ColumnView> _columnViewList = new List<ColumnView>();
     
     public void SetData(JsonDataModel jsonData)
